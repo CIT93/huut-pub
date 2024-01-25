@@ -20,12 +20,29 @@ function determineHouseholdPts(numberInHousehold) {
   }
   
   console.log(`Based on the number of member of the household of ${numberInHousehold} the points would be ${cardonFootprintPoints}`);
-  
+}
+
+
+function calculateEnvironmentalImpact(homeType) {
+   switch(homeType) {
+       case 'large house':
+         cardonFootprintPoints += 10;
+         break;
+       case 'medium house':
+         cardonFootprintPoints += 7;
+         break;
+       case 'small house':
+         cardonFootprintPoints += 4;
+         break;
+       case 'apartment':
+         cardonFootprintPoints += 2;
+         break;
+       default:
+         console.log('Invalid home type');
+   }
 }
 
 let cardonFootprintPoints = 0;
-// const numberInHousehold = 5;
 
-determineHouseholdPts(4);
-determineHouseholdPts(5);
-
+calculateEnvironmentalImpact('medium house');
+console.log(cardonFootprintPoints);
