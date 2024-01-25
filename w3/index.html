@@ -7,7 +7,19 @@
     <script defer src="main.js"></script>
 </head>
 <body>
-    <h2 id="homeType"></h2>
-    <h2 id="cardonFootprintPoints"></h2>
+    <h2>Carbon Footprint Calculator</h2>
+
+    <label for="people">Number of people in your household:</label><br>
+    <select id="people" name="people" required>
+     <!-- Options will be generated dynamically -->
+    </select><br>
+    
+    <label for="homeSize">Size of your home:</label><br>
+    <select id="homeSize" name="homeSize" disabled required>
+     <!-- Options will be generated dynamically -->
+    </select><br>
+    
+    <p id="totalPoints"></p>
+    
 </body>
 </html>
