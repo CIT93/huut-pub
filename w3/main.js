@@ -24,6 +24,7 @@ function determineHouseholdPts(numberInHousehold) {
 
 
 function calculateEnvironmentalImpact(homeType) {
+
    switch(homeType) {
        case 'large house':
          cardonFootprintPoints += 10;
@@ -40,9 +41,13 @@ function calculateEnvironmentalImpact(homeType) {
        default:
          console.log('Invalid home type');
    }
+   document.getElementById('homeType').innerText = 'Home Type: ' + homeType;
+   document.getElementById('cardonFootprintPoints').innerText = 'Cardon Footprint Points: ' + cardonFootprintPoints;
 }
 
 let cardonFootprintPoints = 0;
-
 calculateEnvironmentalImpact('medium house');
-console.log(cardonFootprintPoints);
+
+
+
+
