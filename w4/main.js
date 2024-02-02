@@ -68,14 +68,26 @@ function start(houseHoldMembers, houseSize){
 
 
 function displayOutput(){
+  for (arr of cfpData){
+    console.log(arr);
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `Cardon Footprint total is ${arr[4]}`;
+    
+    const newHouseHoldLi = document.createElement("li");
+    newHouseHoldLi.textContent = `Number people in the house is ${arr[0]} with score ${arr[2]}`;
 
+    const newHouseHoldSizeLi = document.createElement("li");
+    newHouseHoldSizeLi.textContent =  `${arr[1]} size of home with score ${arr[3]}`;
+
+    output.appendChild(newP);
+    output.appendChild(newHouseHoldLi);
+    output.appendChild(newHouseHoldSizeLi);
+  }
 }
 
-start([5, "apartment"]);
-start([4, "large house"]);
-start([4, "medium house"]);
-
-// First note: minimize variables that can be accessible from anywhere in the code with "global scope". For e.g: cardonFootprintPoints could be use along the main.js. It somehow help us to avoid variable naming conflicts.
-// Second note: statement is the first executable statement encountered by the interpreter after function declarations. That's why "global scope" is printed first.
+start(5, "apartment");
+start(4, "large house");
+start(4, "medium house");
 
 displayOutput();
