@@ -76,15 +76,15 @@ function displayOutput(){
     const newP = document.createElement("p");
     newP.textContent = `Cardon Footprint total is ${obj.cfpTotal}`;
     
-    // const newHouseHoldLi = document.createElement("li");
-    // newHouseHoldLi.textContent = `Number people in the house is ${arr[0]} with score ${arr[2]}`;
+    const newHouseHoldLi = document.createElement("li");
+    newHouseHoldLi.textContent = `Number people in the house is ${obj.memberInHouseHold} with score ${obj.householdMPts}`;
 
-    // const newHouseHoldSizeLi = document.createElement("li");
-    // newHouseHoldSizeLi.textContent =  `${arr[1]} size of home with score ${arr[3]}`;
+    const newHouseHoldSizeLi = document.createElement("li");
+    newHouseHoldSizeLi.textContent =  `${obj.sizeHouse} size of home with score ${obj.househouseSPts}`;
 
     output.appendChild(newP);
-    // output.appendChild(newHouseHoldLi);
-    // output.appendChild(newHouseHoldSizeLi);
+    output.appendChild(newHouseHoldLi);
+    output.appendChild(newHouseHoldSizeLi);
   }
 }
 
