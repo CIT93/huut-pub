@@ -77,7 +77,7 @@ function start(firstname, lastname, houseHoldMembers, houseSize){
 function displayOutput(){
   for (obj of cfpData){
     const newP = document.createElement("p");
-    newP.textContent = `Cardon Footprint total is ${obj.cfpTotal}`;
+    newP.textContent = `Cardon Footprint total for ${obj.firstName} ${obj.lastName} is ${obj.cfpTotal}`;
     
     const newHouseHoldLi = document.createElement("li");
     newHouseHoldLi.textContent = `Number people in the house is ${obj.memberInHouseHold} with score ${obj.householdMPts}`;
