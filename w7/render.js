@@ -3,6 +3,7 @@ const OUTPUT = document.getElementById("output");
 
 function renderTable(data){
     OUTPUT.innerHTML = "";
+    TBL.innerHTML = "";
 
     const table = createTableWithHeading();
     const tbody = document.createElement("tbody");

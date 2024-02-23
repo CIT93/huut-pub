@@ -5,7 +5,7 @@ const FORM = document.getElementById("form");
 
 const cfpData = [];
 
-function start(firstname, lastname, houseHoldMembers, houseSize){
+function start(firstname, lastname, houseHoldMembers, houseSize){  
   const houseHoldPts = determineHouseholdPts(houseHoldMembers);
   console.log(houseHoldPts);
 
@@ -38,7 +38,3 @@ addEventListener('submit', function(e){
   renderTable(cfpData);
   FORM.reset();
 })
-
-//TBL is not defined since it was first declared in main.js instead of module render.js
-
-// In my opinion, the issue we're facing is likely because cfpData is declared in the main.js file, and it is not accessible in the render.js module where renderTable is defined. Each module in JavaScript has its own scope, and variables declared in one module are not automatically accessible in another.
