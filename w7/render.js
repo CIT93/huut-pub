@@ -10,7 +10,7 @@ function renderTable(data){
     
     data.forEach(obj => {
         const tr = document.createElement("tr");
-        const trTextArr = [obj.firstName, obj.lastName, obj.memberInHouseHold, obj.sizeHouse, obj.cfpTotal];
+        const trTextArr = [obj.firstName, obj.memberInHouseHold, obj.sizeHouse, obj.cfpTotal];
     
         trTextArr.forEach(text => {
           const td = document.createElement("td");
@@ -34,7 +34,7 @@ function renderTable(data){
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     
-    const headingTextArr = ["First Name", "Last Name", "Household Members", "House Size","Total Points", "Action"];
+    const headingTextArr = ["First Name","Household Members", "House Size","Total Points", "Action"];
     const headingRow = createTableHeadingWithText(headingTextArr);
   
     thead.appendChild(headingRow);
