@@ -5,11 +5,12 @@ function renderTable(data) {
   OUTPUT.innerHTML = "";
   TBL.innerHTML = "";
 
-  const table = createTableWithHeading();
-  const tbody = fetchTableRow(data);
-  table.appendChild(tbody);
-  TBL.appendChild(table);
-
+  if(data.length){
+    const table = createTableWithHeading();
+    const tbody = fetchTableRow(data);
+    table.appendChild(tbody);
+    TBL.appendChild(table);    
+  }
 }
 
 function createTableWithHeading() {
