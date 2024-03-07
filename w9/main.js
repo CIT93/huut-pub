@@ -44,13 +44,13 @@ document.getElementById("firstname").addEventListener("blur", validateInputField
 document.getElementById("lastname").addEventListener("blur", validateInputField);
 
 addEventListener('submit', function(e){
-  const firstNameValue = FORM.firstname.value.trim();
-  const lastNameValue = FORM.lastname.value.trim();
+  const firstName = FORM.firstname.value.trim();
+  const lastName = FORM.lastname.value.trim();
 
   validateInputField({ target: FORM.firstname });
   validateInputField({ target: FORM.lastname });
 
-  if (firstNameValue === "" || lastNameValue === "") {
+  if (firstName === "" || lastName === "") {
     e.preventDefault();
   } else {
     const householdMember = parseInt(FORM.householdMember.value);
