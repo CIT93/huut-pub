@@ -3,7 +3,10 @@ import {determineHouseholdPts, determineHouseholdSizePts} from "./carbonFootprin
 import { FORM, FNAME, LNAME, cfpData } from "./global.js";
 import {saveLS} from "./storage.js";
 
-const start = function(firstname, lastname, houseHoldMembers, houseSize){  
+const start = (firstname, lastname, ...props) => {  
+  const houseHoldMembers = props[0];
+  const houseSize = props[1];
+
   const houseHoldPts = determineHouseholdPts(houseHoldMembers);
   console.log(houseHoldPts);
 
@@ -43,7 +46,7 @@ const validateInputField = event => {
 FNAME.addEventListener("blur", validateInputField);
 LNAME.addEventListener("blur", validateInputField);
 
-addEventListener('submit', function(e){
+addEventListener('submit', (e) => {
   const firstName = FORM.firstname.value.trim();
   const lastName = FORM.lastname.value.trim();
 
@@ -65,23 +68,3 @@ addEventListener('submit', function(e){
 })
 
 renderTable(cfpData);
-
-
-// const add2 = function(a = 10){
-//   return 2 + a;
-// }
-
-// const result = add2();
-
-// spread argument
-// const add2 = function(...a){
-//   return 2 + a[3];
-// }
-
-// const result = add2(1, 2, 3, 4);
-
-const a = 3;
-(function(a){
-  console.log("inside IIFE");
-  console.log(a);
-})(a);

@@ -1,7 +1,7 @@
 import { FORM, TBL } from "./global.js";
 import { saveLS } from "./storage.js";
 
-const renderTable = function(data) {
+const renderTable = (data) => {
   //OUTPUT.innerHTML = "";
   TBL.innerHTML = "";
 
@@ -13,7 +13,7 @@ const renderTable = function(data) {
   }
 }
 
-const createTableWithHeading = function() {
+const createTableWithHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
 
@@ -26,7 +26,7 @@ const createTableWithHeading = function() {
   return table;
 }
 
-const createTableHeadingWithText = function(textArr) {
+const createTableHeadingWithText = (textArr) => {
   const tr = document.createElement("tr");
   textArr.forEach(text => {
     const th = document.createElement("th");
@@ -36,10 +36,10 @@ const createTableHeadingWithText = function(textArr) {
   return tr;
 }
 
-const fetchTableRow = function(data) {
+const fetchTableRow = (data) => {
   const tbody = document.createElement("tbody");
 
-  data.forEach(function (obj, index) {
+  data.forEach((obj, index) => {
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
       if (key !== "lastName" && key !== "householdMPts" && key !== "househouseSPts") {
@@ -57,7 +57,7 @@ const fetchTableRow = function(data) {
   return tbody;
 }
 
-const renderTableButton = function(index, data) {
+const renderTableButton = (index, data) => {
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   const btnDel = document.createElement("button");
@@ -66,7 +66,7 @@ const renderTableButton = function(index, data) {
   td.appendChild(btnEdit);
   td.appendChild(btnDel);
 
-  btnDel.addEventListener('click', function(e) {
+  btnDel.addEventListener('click', (e) => {
     onUpdateTableAndLS(index, data);
   })
 
@@ -74,7 +74,7 @@ const renderTableButton = function(index, data) {
   // Then retrieves record to be edited from data array at specific index
   // Values of retrieved record are then assigned to corresponding input fields and being populated
   // When submit record, function removes old record from array 
-  btnEdit.addEventListener('click', function(e) {
+  btnEdit.addEventListener('click', (e) => {
     const inputData = {
       firstname: document.getElementById("firstname"),
       lastname: document.getElementById("lastname"),
@@ -96,7 +96,7 @@ const renderTableButton = function(index, data) {
 }
 
 
-const onUpdateTableAndLS = function(index, data){
+const onUpdateTableAndLS = (index, data) => {
   data.splice(index,1);
   saveLS(data);
   renderTable(data);

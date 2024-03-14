@@ -1,5 +1,5 @@
-
-const determineHouseholdPts = function(numberInHousehold) {
+// Now set default value of 1 for numberInHousehold
+const determineHouseholdPts = (numberInHousehold = 1) => {
     let houseHoldPoints = 0;
     if (numberInHousehold === 1){
      houseHoldPoints = 14;
@@ -22,7 +22,8 @@ const determineHouseholdPts = function(numberInHousehold) {
    return houseHoldPoints;
  }
  
-const determineHouseholdSizePts = function(homeType) {
+// set default value 'large' for homeType
+const determineHouseholdSizePts = (homeType = 'large') => {
    let houseHoldSizePoints = 0;
  
     switch(homeType) {
@@ -45,5 +46,7 @@ const determineHouseholdSizePts = function(homeType) {
     return houseHoldSizePoints;
  }
  
+ console.log(determineHouseholdPts());
+ console.log(determineHouseholdSizePts());
  
  export {determineHouseholdPts, determineHouseholdSizePts}
