@@ -1,11 +1,13 @@
 class FP {
-  constructor(first, last, houseMembers, houseSize) {
+  constructor(first, last, houseMembers, houseSize, foodChoice) {
     this.first = first;
     this.last = last;
     this.houseMembers = houseMembers;
     this.houseSize = houseSize;
+    this.foodChoice = foodChoice;
     this.houseHoldPoints();
     this.houseHoldSizePoints();
+    this.foodChoicePoints();
     this.total();
   }
   houseHoldPoints() {
@@ -46,8 +48,37 @@ class FP {
         console.log("Invalid home type");
     }
   }
+
+  foodChoicePoints() {
+    switch (this.foodChoice) {
+      case "meatDaily":
+        this.foodChoiceText = "Domestic meat daily basic";
+        this.foodChoicePoints = 10;
+        break;
+      case "meatFewTimes":
+        this.foodChoiceText = "Domestic meat few times per week";
+        this.foodChoicePoints = 8;
+        break;
+      case "vegetarian":
+        this.foodChoiceText = "Vegetarian";
+        this.foodChoicePoints = 4;
+        break;
+      case "vegetarianOrWild":
+        this.foodChoiceText = "Vegan or only eat wild meat";
+        this.foodChoicePoints = 2;
+        break;
+      case "prepackageFood":
+        this.foodChoiceText = "Prepackaged convenience food";
+        this.foodChoicePoints = 12;
+        break;
+      default:
+        console.log("Invalid food choice");
+    }
+  }
+
   total() {
-    this.total = this.houseHoldPoints + this.houseHoldSizePoints;
+    this.total =
+      this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints;
   }
 }
 

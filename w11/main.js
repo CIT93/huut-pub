@@ -4,30 +4,30 @@ import { FORM, FNAME, LNAME, cfpData } from "./global.js";
 import {saveLS} from "./storage.js";
 import { FP } from "./fp.js";
 
-const start = (firstname, lastname, ...props) => {  
-  const houseHoldMembers = props[0];
-  const houseSize = props[1];
+// const start = (firstname, lastname, ...props) => {  
+//   const houseHoldMembers = props[0];
+//   const houseSize = props[1];
 
-  const houseHoldPts = determineHouseholdPts(houseHoldMembers);
-  console.log(houseHoldPts);
+//   const houseHoldPts = determineHouseholdPts(houseHoldMembers);
+//   console.log(houseHoldPts);
 
-  const houseHoldSizePts = determineHouseholdSizePts(houseSize);
-  console.log(houseHoldSizePts);
+//   const houseHoldSizePts = determineHouseholdSizePts(houseSize);
+//   console.log(houseHoldSizePts);
 
-  const totalPts = houseHoldPts + houseHoldSizePts;
+//   const totalPts = houseHoldPts + houseHoldSizePts;
 
-  const cfpObject = {
-    firstName: firstname,
-    lastName: lastname,
-    memberInHouseHold : houseHoldMembers,
-    sizeHouse: houseSize,
-    househouseSPts : houseHoldSizePts,
-    householdMPts: houseHoldPts,
-    cfpTotal: totalPts
-  }
+//   const cfpObject = {
+//     firstName: firstname,
+//     lastName: lastname,
+//     memberInHouseHold : houseHoldMembers,
+//     sizeHouse: houseSize,
+//     househouseSPts : houseHoldSizePts,
+//     householdMPts: houseHoldPts,
+//     cfpTotal: totalPts
+//   }
 
-  cfpData.push(cfpObject);
-}
+//   cfpData.push(cfpObject);
+// }
 
 const validateInputField = event => {
   const field = event.target.value;
@@ -59,9 +59,10 @@ addEventListener('submit', (e) => {
   } else {
     const householdMember = parseInt(FORM.householdMember.value);
     const householdSize = FORM.householdSize.value;
+    const foodChoice = FORM.foodChoice.value;
     // start(firstName, lastName, householdMember, householdSize);
 
-    const fpObj = new FP(firstName, lastName, householdMember, householdSize);
+    const fpObj = new FP(firstName, lastName, householdMember, householdSize, foodChoice);
 
     cfpData.push(fpObj);
     saveLS(cfpData);

@@ -17,7 +17,7 @@ const createTableWithHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
 
-  const headingTextArr = ["First Name", "Household Members", "House Size", "Total Points", "Action"];
+  const headingTextArr = ["First Name", "Household Members", "House Size", "Food Choice", "Total Points", "Action"];
   const headingRow = createTableHeadingWithText(headingTextArr);
 
   thead.appendChild(headingRow);
@@ -42,12 +42,17 @@ const fetchTableRow = (data) => {
   data.forEach((obj, index) => {
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
-      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseHoldSizePoints") {
+      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseHoldSizePoints" && key !== "foodChoicePoints" && key !== "foodChoiceText") {
         const td = document.createElement("td");
-        td.textContent = value;
+        if (key === "foodChoice") {
+          td.textContent = obj.foodChoiceText;
+        } else {
+          td.textContent = value;
+        }
         tr.appendChild(td);
       }
     }
+    
     const td = renderTableButton(index, data);
     tr.appendChild(td);
 
@@ -80,6 +85,7 @@ const renderTableButton = (index, data) => {
       lastname: document.getElementById("lastname"),
       householdMember: document.getElementById("householdMember"),
       householdSize: document.getElementById("householdSize"),
+      foodChoice: document.getElementById("foodChoice")
     };
 
     const record = data[index];
@@ -88,6 +94,7 @@ const renderTableButton = (index, data) => {
     inputData.lastname.value = record.last;
     inputData.householdMember.value = record.houseMembers;
     inputData.householdSize.value = record.houseSize;
+    inputData.foodChoice.value = record.foodChoice;
 
     onUpdateTableAndLS(index, data);
   });
