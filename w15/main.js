@@ -3,6 +3,11 @@ import { FORM, FNAME, LNAME, cfpData } from "./global.js";
 import {saveLS} from "./storage.js";
 import { FP } from "./fp.js";
 
+const calculateAverageFootprintScore = (data) => {
+  const totalScore = data.reduce((acc, fp) => acc + fp.total, 0);
+  return totalScore / data.length;
+};
+
 const validateInputField = event => {
   const field = event.target.value;
   const fieldId = event.target.id;
@@ -47,43 +52,4 @@ addEventListener('submit', (e) => {
 
 renderTable(cfpData);
 
-// let pizza;
-
-// function orderPizza() {
-//   console.log('Order pizza');
-//   setTimeout(() => {
-//     pizza = `🍕🍕🍕`;
-//     console.log(`${pizza} is ready`);
-//   }, 2000);
-//   console.log('Pizza was ordered');
-// }
-
-// orderPizza();
-// console.log('Call my friend');
-// console.log(`Eat ${pizza}`);
-
-// function orderPizza(callback){
-//   setTimeout(() => {
-//     const pizza = `🍕`;
-//     callback(pizza);
-//   }, 2000)
-// }
-
-// function pizzaReady(pizza) {
-//   console.log(`Eat the ${pizza}`);
-// }
-
-// orderPizza(pizzaReady);
-// console.log(`Call my friend`);
-
-function thing1 (callback) {
-  callback();
-}
-
-function thing2 (callback) {
-  callback();
-}
-
-function thing3 (callback) {
-  callback();
-}
+export {calculateAverageFootprintScore}

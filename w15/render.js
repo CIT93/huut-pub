@@ -1,5 +1,6 @@
 import { FORM, TBL } from "./global.js";
 import { saveLS } from "./storage.js";
+import {calculateAverageFootprintScore} from "./main.js";
 
 const renderTable = (data) => {
   //OUTPUT.innerHTML = "";
@@ -9,7 +10,10 @@ const renderTable = (data) => {
     const table = createTableWithHeading();
     const tbody = fetchTableRow(data);
     table.appendChild(tbody);
-    TBL.appendChild(table);    
+    TBL.appendChild(table);   
+    
+    const averageRow = createAverageRow(data);
+    TBL.appendChild(averageRow);
   }
 }
 
@@ -107,6 +111,19 @@ const onUpdateTableAndLS = (index, data) => {
   data.splice(index,1);
   saveLS(data);
   renderTable(data);
+}
+
+const createAverageRow = (data) => {
+  const averageScore = calculateAverageFootprintScore(data);
+
+  const tr = document.createElement("tr");
+  const td = document.createElement("td");
+  td.colSpan = 6; // Spanning across all columns
+
+  td.textContent = `Average Footprint Score: ${averageScore.toFixed(2)}`; // Displaying average score with two decimal places
+  tr.appendChild(td);
+
+  return tr;
 }
 
 export { renderTable }
