@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 11 Carbon Footprint</title>
+    <title>Week 16 Carbon Footprint</title>
     <script type="module" src="main.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,21 +13,21 @@
             <legend>Input Cardon Footprint</legend>
 
             <div>
-                <label for="">First Name:</label>
+                <label for="firstname">First Name:</label>
                 <input type="text" name="firstname" id="firstname" maxlength="20">
                 <span id="firstnameError" class="error" role="alert"></span>
             </div>
             <div>
-                <label for="">Last Name:</label>
+                <label for="lastname">Last Name:</label>
                 <input type="text" name="lastname" id="lastname" maxlength="20">
                 <span id="lastnameError" class="error" role="alert"></span>
             </div>
             <div>
-                <label for="">How many member in your household?</label>
+                <label for="householdMember">How many member in your household?</label>
                 <input type="number" name="householdMember" id="householdMember" min="1" max="6" required>
             </div>
             <div>
-                <label for="">What is your size of household?</label>
+                <label for="householdSize">What is your size of household?</label>
                 <select name="householdSize" id="householdSize" required>
                     <option value="">--------</option>
                     <option value="apartment">Apartment</option>
@@ -37,7 +37,7 @@
                 </select>
             </div>
             <div>
-                <label for="">Evaluate your food choices</label>
+                <label for="foodChoice">Evaluate your food choices</label>
                 <select name="foodChoice" id="foodChoice" required>
                     <option value="">--------</option>
                     <option value="meatDaily">Domestic meat daily basic</option>
@@ -47,7 +47,7 @@
                 </select>
             </div>
             <div>
-                <label for="">Evaluate your food sources</label>
+                <label for="foodSource">Evaluate your food sources</label>
                 <select name="foodSource" id="foodSource" required>
                     <option value="">--------</option>
                     <option value="packed">Prepacked convenience food</option>
@@ -56,7 +56,7 @@
                 </select>
             </div>
             <div>
-                <label for="">Evaluate water consumptions</label>
+                <label for="water">Evaluate water consumptions</label>
                 <select name="water" id="water" required>
                     <option value="">--------</option>
                     <option value="3">More than 9 times per week</option>
@@ -66,6 +66,14 @@
 
                 </select>
             </div>
+            <div>
+                <label for="doubleWater">Do you have both a dishwasher and washing machine?</label>
+                <select name="doubleWater" id="doubleWater" required>
+                  <option value="">------</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
             <button type="submit">Submit</button>
 
         </fieldset>

@@ -1,6 +1,6 @@
 import { FORM, TBL } from "./global.js";
 import { saveLS } from "./storage.js";
-import {calculateAverageFootprintScore} from "./main.js";
+import {calculateAverageFootprintScore, handleWaterSelectChange} from "./main.js";
 
 const renderTable = (data) => {
   //OUTPUT.innerHTML = "";
@@ -72,10 +72,12 @@ const renderTableButton = (index, data) => {
   td.appendChild(btnDel);
 
   btnDel.addEventListener('click', (e) => {
+    e.preventDefault();
     onUpdateTableAndLS(index, data);
   })
 
   btnEdit.addEventListener('click', (e) => {
+    e.preventDefault();
     const inputData = {
       firstname: document.getElementById("firstname"),
       lastname: document.getElementById("lastname"),
@@ -83,7 +85,8 @@ const renderTableButton = (index, data) => {
       householdSize: document.getElementById("householdSize"),
       foodChoice: document.getElementById("foodChoice"),
       foodSource: document.getElementById("foodSource"),
-      water: document.getElementById("water")
+      water: document.getElementById("water"),
+      doubleWater: document.getElementById("doubleWater")
     };
 
     const record = data[index];
@@ -95,6 +98,9 @@ const renderTableButton = (index, data) => {
     inputData.foodChoice.value = record.foodChoice;
     inputData.foodSource.value = record.foodSource;
     inputData.water.value = record.waterPoints;
+    inputData.doubleWater.value = record.doubleWater;
+
+    handleWaterSelectChange();
 
     onUpdateTableAndLS(index, data);
   });

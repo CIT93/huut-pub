@@ -41,8 +41,9 @@ addEventListener('submit', (e) => {
     const foodChoice = FORM.foodChoice.value;
     const foodSource = FORM.foodSource.value;
     const water = parseInt(FORM.water.value);
+    const doubleWater = FORM.doubleWater.value;
 
-    const fpObj = new FP(firstName, lastName, householdMember, householdSize, foodChoice, foodSource, water);
+    const fpObj = new FP(firstName, lastName, householdMember, householdSize, foodChoice, foodSource, water, doubleWater);
 
     cfpData.push(fpObj);
     saveLS(cfpData);
@@ -52,6 +53,21 @@ addEventListener('submit', (e) => {
   }
 })
 
+const handleWaterSelectChange = () => {
+  const waterSelect = document.getElementById("water");
+  const doubleWaterSelect = document.getElementById("doubleWater");
+
+  if (waterSelect.value === "0") {
+    doubleWaterSelect.disabled = true;
+  } else {
+    doubleWaterSelect.disabled = false;
+  }
+};
+
+document.getElementById("water").addEventListener("change", handleWaterSelectChange);
+
+handleWaterSelectChange();
+
 renderTable(cfpData);
 
-export {calculateAverageFootprintScore}
+export {calculateAverageFootprintScore, handleWaterSelectChange}
