@@ -86,7 +86,8 @@ const renderTableButton = (index, data) => {
       foodChoice: document.getElementById("foodChoice"),
       foodSource: document.getElementById("foodSource"),
       water: document.getElementById("water"),
-      doubleWater: document.getElementById("doubleWater")
+      doubleWater: document.getElementById("doubleWater"),
+      householdPurchase: document.getElementById("householdPurchase")
     };
 
     const record = data[index];
@@ -99,6 +100,7 @@ const renderTableButton = (index, data) => {
     inputData.foodSource.value = record.foodSource;
     inputData.water.value = record.waterPoints;
     inputData.doubleWater.value = record.doubleWater;
+    inputData.householdPurchase.value = record.householdPurchasePoints;
 
     handleWaterSelectChange();
 

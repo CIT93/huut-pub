@@ -42,8 +42,9 @@ addEventListener('submit', (e) => {
     const foodSource = FORM.foodSource.value;
     const water = parseInt(FORM.water.value);
     const doubleWater = FORM.doubleWater.value;
+    const householdPurchase = parseInt(FORM.householdPurchase.value);
 
-    const fpObj = new FP(firstName, lastName, householdMember, householdSize, foodChoice, foodSource, water, doubleWater);
+    const fpObj = new FP(firstName, lastName, householdMember, householdSize, foodChoice, foodSource, water, doubleWater, householdPurchase);
 
     cfpData.push(fpObj);
     saveLS(cfpData);

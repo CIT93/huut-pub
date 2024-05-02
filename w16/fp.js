@@ -1,5 +1,5 @@
 class FP {
-  constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, water, doubleWater) {
+  constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, water, doubleWater, householdPurchase) {
     this.first = first;
     this.last = last;
     this.houseMembers = houseMembers;
@@ -8,6 +8,7 @@ class FP {
     this.foodSource = foodSource;
     this.waterPoints = water;
     this.doubleWater = doubleWater;
+    this.householdPurchasePoints = householdPurchase;
     this.houseHoldPoints();
     this.houseHoldSizePoints();
     this.foodChoicePoints();
@@ -95,12 +96,12 @@ class FP {
   total() {
     if (this.doubleWater === "yes"){
       this.total =
-      this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints + this.foodSourcePoints + (this.waterPoints*2);
+      this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints + this.foodSourcePoints + (this.waterPoints*2) + this.householdPurchasePoints;
     }
 
     if (this.doubleWater === "" || this.doubleWater === "no"){
       this.total =
-      this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints + this.foodSourcePoints + this.waterPoints;
+      this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints + this.foodSourcePoints + this.waterPoints + this.householdPurchasePoints;
     }
   }
 }
