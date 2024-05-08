@@ -1,0 +1,61 @@
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-container {
+    width: 50%; /* Adjust width as needed */
+}
+
+.right-container {
+    width: 45%; /* Adjust width as needed */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1; /* Each column occupies equal space */
+}
+
+.form-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(129, 157, 118);
+}
+
+#type {
+    width: 40%; /* Adjust the width as needed */
+}
+
+.clothes-list {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.clothing-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 10px; /* Adjust margin as needed */
+    margin-bottom: 10px; /* Adjust margin as needed */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
