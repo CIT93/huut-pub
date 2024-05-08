@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 16 Carbon Footprint</title>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Input Cardon Footprint</legend>
+
+            <div>
+                <label for="firstname">First Name:</label>
+                <input type="text" name="firstname" id="firstname" maxlength="20">
+                <span id="firstnameError" class="error" role="alert"></span>
+            </div>
+            <div>
+                <label for="lastname">Last Name:</label>
+                <input type="text" name="lastname" id="lastname" maxlength="20">
+                <span id="lastnameError" class="error" role="alert"></span>
+            </div>
+            <div>
+                <label for="householdMember">How many member in your household?</label>
+                <input type="number" name="householdMember" id="householdMember" min="1" max="6" required>
+            </div>
+            <div>
+                <label for="householdSize">What is your size of household?</label>
+                <select name="householdSize" id="householdSize" required>
+                    <option value="">--------</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="foodChoice">Evaluate your food choices</label>
+                <select name="foodChoice" id="foodChoice" required>
+                    <option value="">--------</option>
+                    <option value="meatDaily">Domestic meat daily basic</option>
+                    <option value="meatFewTimes">Domestic meat few times per week</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegetarianOrWild">Vegan or only eat wild meat</option>
+                </select>
+            </div>
+            <div>
+                <label for="foodSource">Evaluate your food sources</label>
+                <select name="foodSource" id="foodSource" required>
+                    <option value="">--------</option>
+                    <option value="packed">Prepacked convenience food</option>
+                    <option value="balance">Good balance of fresh and convenience food</option>
+                    <option value="local">Only eat fresh, locally grown, or hunted food</option>
+                </select>
+            </div>
+            <div>
+                <label for="water">Evaluate water consumptions</label>
+                <select name="water" id="water" required>
+                    <option value="">--------</option>
+                    <option value="3">More than 9 times per week</option>
+                    <option value="2">Between 4 to 9 times per week</option>
+                    <option value="1">Between 1 to 3 times per week</option>
+                    <option value="0">Don't have a dishwasher or washine machine</option>
+
+                </select>
+            </div>
+            <div>
+                <label for="doubleWater">Do you have both a dishwasher and washing machine?</label>
+                <select name="doubleWater" id="doubleWater" required>
+                  <option value="">------</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="householdPurchase">Evaluate household purchases</label>
+                <select name="householdPurchase" id="householdPurchase" required>
+                    <option value="">--------</option>
+                    <option value="10">More than 7 new items</option>
+                    <option value="8">Between 5 to 7 new items</option>
+                    <option value="6">Between 3 to 5 new items</option>
+                    <option value="4">Less than 3 times</option>
+                    <option value="2">Purchase nothing or only secondhand items</option>
+
+                </select>
+            </div>
+
+            <div>
+                <label for="wasteProduce">Evaluate waste be produced</label>
+                <select name="wasteProduce" id="wasteProduce" required>
+                    <option value="">--------</option>
+                    <option value="50">4 garbage cans each week</option>
+                    <option value="40">3 garbage cans each week</option>
+                    <option value="30">2 garbage cans each week</option>
+                    <option value="20">1 garbage cans each week</option>
+                    <option value="5">half garbage can or less per week</option>
+
+                </select>
+            </div>
+            
+            <fieldset>
+                <legend>Identify the amount of waste could recycle</legend>
+                <label for="glass">
+                    <input class="recycle" type="checkbox" name="glass" id="glass" value="glass" />
+                    Glass
+                </label>
+                <label for="plastic">
+                    <input class="recycle" type="checkbox" name="plastic" id="plastic" value="plastic" />
+                    Plastic
+                </label>
+                <label for="paper">
+                    <input class="recycle" type="checkbox" name="paper" id="paper" value="paper" />
+                    Paper
+                </label>
+                <label for="aluminum">
+                    <input class="recycle" type="checkbox" name="aluminum" id="aluminum" value="aluminum" />
+                    Aluminum
+                </label>
+                <label for="steel">
+                    <input class="recycle" type="checkbox" name="steel" id="steel" value="steel" />
+                    Steel
+                </label>
+                <label for="food">
+                    <input class="recycle" type="checkbox" name="food" id="food" value="food" />
+                    Food Wasting
+                </label>
+            </fieldset>
+            <button type="submit">Submit</button>
+
+        </fieldset>
+
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+</body>
+</html>

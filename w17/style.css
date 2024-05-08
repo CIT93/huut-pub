@@ -1,0 +1,69 @@
+html {
+    font-size: 18px;
+}
+
+body {
+    background-color: #333;
+    color: whitesmoke;
+}
+
+legend {
+    font-size: 26px;
+}
+
+form div {
+    margin-bottom: 2px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 2px;
+}
+
+form select,
+form input[type="text"],
+form input[type="number"] {
+    width: 20%;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input:in-range {
+    background-color: lightgreen;
+}
+
+input:out-of-range {
+    background-color: lightcoral;
+}
+
+table,
+th,
+td {    
+    border: 1px solid;
+    padding: 15px;
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(129, 157, 118);
+}
+
+.error {
+    color: red;
+}
+
+form button[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #93c195; /* Darker green */
+}
