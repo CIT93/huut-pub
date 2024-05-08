@@ -17,5 +17,7 @@ export let clothes = [
   { type: "sweater", status: "clean" },
   { type: "trousers", status: "dirty" },
   { type: "jeans", status: "clean" },
+  { type: "tunic", status: "clean" },
+  { type: "gipsy", status: "clean" },
 ];
   
