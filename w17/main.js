@@ -59,8 +59,12 @@ addEventListener('submit', (e) => {
     const doubleWater = FORM.doubleWater.value;
     const householdPurchase = parseInt(FORM.householdPurchase.value);
     const wasteProduce = parseInt(FORM.wasteProduce.value);
+    const personalVehicle = parseInt(FORM.personalVehicle.value);
+    const publicTransportation = parseInt(FORM.publicTransportation.value);
+    const flights = parseInt(FORM.flights.value);
 
-    const fpObj = new FP(firstName, lastName, householdMember, householdSize, foodChoice, foodSource, water, doubleWater, householdPurchase, wasteProduce, recycleObj);
+    const fpObj = new FP(firstName, lastName, householdMember, householdSize, foodChoice, foodSource, water, doubleWater, householdPurchase, wasteProduce,
+                          recycleObj, personalVehicle, publicTransportation, flights);
 
     cfpData.push(fpObj);
     saveLS(cfpData);

@@ -95,7 +95,9 @@ const renderTableButton = (index, data) => {
       aluminum: document.getElementById("aluminum"),
       steel: document.getElementById("steel"),
       food: document.getElementById("food"),
-
+      personalVehicle: document.getElementById("personalVehicle"),
+      publicTransportation: document.getElementById("publicTransportation"),
+      flights: document.getElementById("flights")
     };
 
     const record = data[index];
@@ -116,7 +118,9 @@ const renderTableButton = (index, data) => {
     inputData.aluminum.checked = record.recycleObj.aluminum;
     inputData.steel.checked = record.recycleObj.steel;
     inputData.food.checked = record.recycleObj.food;
-
+    inputData.personalVehicle.value = record.personalPoints;
+    inputData.publicTransportation.value = record.publicPoints;
+    inputData.flights.value = record.flightsPoints;
 
     handleWaterSelectChange();
 

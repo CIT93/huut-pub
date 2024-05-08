@@ -1,5 +1,5 @@
 class FP {
-  constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, water, doubleWater, householdPurchase, wasteProduce, recycleObj) {
+  constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, water, doubleWater, householdPurchase, wasteProduce, recycleObj, personalVehicle, publicTransportation, flights) {
     this.first = first;
     this.last = last;
     this.houseMembers = houseMembers;
@@ -11,6 +11,9 @@ class FP {
     this.householdPurchasePoints = householdPurchase;
     this.wasteProducePoints = wasteProduce;
     this.recycleObj = recycleObj;
+    this.personalPoints = personalVehicle;
+    this.publicPoints = publicTransportation;
+    this.flightsPoints = flights;
     this.houseHoldPoints();
     this.houseHoldSizePoints();
     this.foodChoicePoints();
@@ -98,12 +101,14 @@ class FP {
   total() {
     if (this.doubleWater === "yes"){
       this.total =
-      this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints + this.foodSourcePoints + (this.waterPoints*2) + this.householdPurchasePoints + this.wasteProducePoints + this.recycleObj.recyclePoints;
+        this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints + this.foodSourcePoints + (this.waterPoints*2) + this.householdPurchasePoints + this.wasteProducePoints 
+        + this.recycleObj.recyclePoints + this.personalPoints + this.flightsPoints + this.publicPoints;
     }
 
     if (this.doubleWater === "" || this.doubleWater === "no"){
       this.total =
-      this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints + this.foodSourcePoints + this.waterPoints + this.householdPurchasePoints + this.wasteProducePoints + this.recycleObj.recyclePoints;
+        this.houseHoldPoints + this.houseHoldSizePoints + this.foodChoicePoints + this.foodSourcePoints + this.waterPoints + this.householdPurchasePoints + this.wasteProducePoints 
+        + this.recycleObj.recyclePoints + this.personalPoints + this.flightsPoints + this.publicPoints;
     }
   }
 }

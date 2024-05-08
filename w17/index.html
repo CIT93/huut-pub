@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 16 Carbon Footprint</title>
+    <title>Week 17 Carbon Footprint</title>
     <script type="module" src="main.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -128,9 +128,49 @@
                     Food Wasting
                 </label>
             </fieldset>
+
+            <fieldset>
+                <legend>Transportation</legend>
+                <div>
+                    <label>Miles per year for your personal vehicle usage?</label>
+                    <select name="personalVehicle" id="personalVehicle" required>
+                        <option value="">--Choose--</option>
+                        <option value="12">more than 15,000 miles per year</option>
+                        <option value="10">10,000 - 15,000 miles per year</option>
+                        <option value="6">1,000 to 10,000 miles per year</option>
+                        <option value="4">less than 1,000 miles per year</option>
+                        <option value="0">I don't have a car</option>
+                    </select>
+                </div>
+    
+                <div>
+                    <label>Miles per year for public transportation?</label>
+                    <select name="publicTransportation" id="publicTransportation" required>
+                        <option value="">--Choose--</option>
+                        <option value="12">more than 20,000 miles per year</option>
+                        <option value="10">15,000 to 20,000 miles per year</option>
+                        <option value="6">10,000 to 15,000 miles per year</option>
+                        <option value="4">1,000 to 10,000 miles per year</option>
+                        <option value="2">less than 1,000 miles per year</option>
+                        <option value="0">I don't use public transportation</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Annual flights?</label>
+                    <select name="flights" id="flights" required>
+                        <option value="">--Choose--</option>
+                        <option value="2">short distances, within state</option>
+                        <option value="6">nearby state or country</option>
+                        <option value="20">transcontinental</option>
+                        <option value="0">no flights</option>
+                    </select>
+                </div>
+            </fieldset>
             <button type="submit">Submit</button>
 
-        </fieldset>
+        </fieldset> <br>
+
+
 
     </form>
     <div id="output"></div>
